@@ -6,12 +6,18 @@ $("#currentDay").text(moment().format("dddd, MMMM Do YYYY"));
  }
  var time = document.querySelectorAll(".hour");
  console.log(time);
+ $(".text").addClass("future");
 updateTime();
 setInterval(updateTime, 1000);
-var hour = moment().format("h");
-// function setColors(){
-//    time.addClass("future");
-// }
-// setColors();
-
+// var hour = moment().format("h");
+// console.log(hour);
+// var test = parseInt("7am");
+// console.log(test);
+// console.log("_____", $(".hour").text());
+// console.log(parseInt("7 am"));
+// function checkColors(){
+//     if(parseInt($(".hour").text())===9){
+//         $(".text").addClass("present");
+//     }
+//    }
 })
