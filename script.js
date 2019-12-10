@@ -14,7 +14,8 @@ $("#currentDay").text(moment().format("dddd, MMMM Do YYYY"));
 function checkColors(){
     for( var i =0; i < time.length; i ++){
     var actualTime= parseInt(hour);
-    var timeSlot = parseInt(time[i].textContent);
+    var timeSlot = parseInt($(time[i]).attr("data-milTime"));
+    console.log(actualTime, "_____", timeSlot);
         if(actualTime > timeSlot){
             $(userInput[i]).addClass("past");
             $(userInput[i]).removeClass("future");
