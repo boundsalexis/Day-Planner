@@ -5,7 +5,6 @@ $(document).ready(function(){
  var save =document.querySelectorAll(".save");
 var hour = moment().format("HH");
 
-// var hour=3;
 $("#currentDay").text(moment().format("dddd, MMMM Do YYYY"));
  let updateTime= function (){
      let currentTime = moment().format("dddd, MMMM Do YYYY, h:mm:ss a");
@@ -16,9 +15,6 @@ function checkColors(){
     for( var i =0; i < time.length; i ++){
     var actualTime= parseInt(hour);
     var timeSlot = parseInt(time[i].textContent);
-    console.log(actualTime);
-    console.log(timeSlot);
-    console.log
         if(actualTime > timeSlot){
             $(userInput[i]).addClass("past");
             $(userInput[i]).removeClass("future");
@@ -33,11 +29,12 @@ function checkColors(){
             $(userInput[i]).addClass("future");
             $(userInput[i]).removeClass("past");
             $(userInput[i]).removeClass("present");
-
         }
 }
 }
-
+$(".saveBtn").on("click", function(){
+console.log($(this).attr("data-val"));
+})
 $(userInput).addClass("future");
 updateTime();
 setInterval(updateTime, 1000);
