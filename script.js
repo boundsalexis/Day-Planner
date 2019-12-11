@@ -15,7 +15,6 @@ function checkColors(){
     for( var i =0; i < time.length; i ++){
     var actualTime= parseInt(hour);
     var timeSlot = parseInt($(time[i]).attr("data-milTime"));
-    console.log(actualTime, "_____", timeSlot);
         if(actualTime > timeSlot){
             $(userInput[i]).addClass("past");
             $(userInput[i]).removeClass("future");
@@ -33,9 +32,15 @@ function checkColors(){
         }
 }
 }
-$(".saveBtn").on("click", function(){
-console.log($(this).attr("data-val"));
+$(".saveBtn").on("click", function(event){
+    event.preventDefault();
+    var id = "#";
+    id += $(this).attr("data-val");
+    var eventTime =$(this).attr("data-val");
+    var input = $(id).val();
+    window.localStorage.setItem(eventTime, input);
 })
+
 $(userInput).addClass("future");
 updateTime();
 setInterval(updateTime, 1000);
